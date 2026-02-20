@@ -1,6 +1,3 @@
-necesito que a este codigo primero le pongas todo el font en esta font type: font-family: 'Avenir Next', sans-serif. Segundo, necesito que el body text este todo del mimso size. También, agrega UN TXTO DESPUÉS DE READ FULL STORY HERE QUE DIGA ALGO COMO " If you want to read the workshop report, download it here" el here tiene el color verde HEX #285C4D donde están los hipervínculos y el link es este: https://connect.fsc.org/sites/default/files/2026-02/Kiwi%20-%20Report%20EN%20Workshop%20PCI%20Revision%20in%20Brazil.pdf
-
-Tambine quiero que estr iframe ocupe todo el espacio gris de fondo que tiene un iframe en arcgis hub, porque actualmente es mas pequeno y se ve eso fondo gris alreadedor. este es el codigo, damelo COMPLETO SIN QUITRA NADA, solo corrigiendo lo que te digo:
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,14 +8,30 @@ body {
   margin:0;
   padding:2rem;
   background:#f5f5f5;
-  font-family:'DM Sans', sans-serif;
+  font-family:'Avenir Next', sans-serif;
+  font-size:16px;
+}
+
+/* Fuerza mismo tamaño de texto en todo el body */
+body p,
+body li,
+body ul {
+  font-size:16px;
+}
+
+/* En caso de usar iframe en ArcGIS Hub */
+iframe {
+  width:100%;
+  height:100%;
+  display:block;
+  border:none;
 }
 </style>
 </head>
 
 <body>
 
-<div style="background:#FFFFFF; padding:2rem 2rem 4.5rem 2rem; border-radius:12px; font-family:'DM Sans', sans-serif; box-shadow: 6px 6px 10px rgba(0,0,0,0.12); position: relative; margin-top: 2rem; max-width:1100px; margin-left:auto; margin-right:auto;">
+<div style="background:#FFFFFF; padding:2rem 2rem 4.5rem 2rem; border-radius:12px; font-family:'Avenir Next', sans-serif; box-shadow: 6px 6px 10px rgba(0,0,0,0.12); position: relative; margin-top: 2rem; max-width:1100px; margin-left:auto; margin-right:auto;">
 
   <!-- Imagen + título -->
   <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
@@ -28,17 +41,17 @@ body {
            style="width:100%; border-radius:8px;">
     </div>
     <div style="flex: 1;">
-      <h3 style="margin:0; font-size: 1.2rem; font-weight:700; color:#1f1f1f;">
+      <h3 style="margin:0; font-size: 1.2rem; font-weight:700; color:#1f1f1f; font-family:'Avenir Next', sans-serif;">
         In person event: FSC® Brazil 2025 General Assembly strengthens forest certification in the country
       </h3>
-      <p style="margin: 0.5rem 0 0; font-size: 0.9rem;">📆 <strong>Date:</strong> July 1–4, 2025</p>
-      <p style="margin: 0.2rem 0 0; font-size: 0.9rem;">🎯 <strong>Audience:</strong> FSC members, observers, guests, sponsors and staff (by invitation)</p>
+      <p style="margin: 0.5rem 0 0;">📆 <strong>Date:</strong> July 1–4, 2025</p>
+      <p style="margin: 0.2rem 0 0;">🎯 <strong>Audience:</strong> FSC members, observers, guests, sponsors and staff (by invitation)</p>
     </div>
   </div>
 
   <!-- Texto -->
   <div style="margin-top: 1.2rem;">
-    <ul style="line-height: 1.6; padding-left: 1.2rem; font-size: 0.95rem; color:#333;">
+    <ul style="line-height: 1.6; padding-left: 1.2rem; color:#333;">
       <li>With the theme "Brazilian Biomes: Giants by Nature", the FSC® Brazil 2025 General Assembly brought together members, observers, guests, sponsors and staff in a meeting marked by dialogue, strategic deliberations, connections and celebration.</li>
       <li>The program began with the Board of Directors Meeting and continued with the technical workshop on the FSC Principles & Criteria, aimed at the environmental and social chambers.</li>
       <li>Participants also followed presentations of key initiatives and partnerships, as well as a thematic session on Intact Forest Landscapes (PFI).</li>
@@ -55,13 +68,19 @@ body {
          target="_blank"
          style="color:#285C4D; text-decoration: underline; font-weight:600;">
          here
+      </a>. 
+      If you want to read the workshop report, download it 
+      <a href="https://connect.fsc.org/sites/default/files/2026-02/Kiwi%20-%20Report%20EN%20Workshop%20PCI%20Revision%20in%20Brazil.pdf"
+         target="_blank"
+         style="color:#285C4D; text-decoration: underline; font-weight:600;">
+         here
       </a>.
     </p>
   </div>
 
   <!-- Carousel -->
   <div style="margin-top: 2rem; position: relative; padding: 0 40px;">
-    <h4 style="margin-bottom: 0.8rem; color:#1f1f1f; font-weight:700;">📸 Event Highlights</h4>
+    <h4 style="margin-bottom: 0.8rem; color:#1f1f1f; font-weight:700; font-family:'Avenir Next', sans-serif;">📸 Event Highlights</h4>
     
     <div style="position: relative; max-width: 100%; overflow: hidden; border-radius: 10px;">
       <div id="photoSlider2" style="display: flex; transition: transform 0.4s ease;">
